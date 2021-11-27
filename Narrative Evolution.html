@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+<title>Narrative Evolution</title>
+<script language="javascript" type="text/javascript">
+var timerid = 0;
+var images = new Array(	"https://yasminbascalart.files.wordpress.com/2021/11/print1.jpg",
+			"https://yasminbascalart.files.wordpress.com/2021/11/print2.jpg",
+			"https://yasminbascalart.files.wordpress.com/2021/11/print3.jpg",
+			"https://yasminbascalart.files.wordpress.com/2021/11/print4.jpg",
+			"https://yasminbascalart.files.wordpress.com/2021/11/print5.jpg",
+			"https://yasminbascalart.files.wordpress.com/2021/11/print6.jpg",
+			"https://yasminbascalart.files.wordpress.com/2021/11/print7.jpg",
+			"https://yasminbascalart.files.wordpress.com/2021/11/print8.jpg",
+			"https://yasminbascalart.files.wordpress.com/2021/11/print9.jpg");
+var countimages = 0;
+function startTime()
+{
+	if(timerid)
+	{
+		timerid = 0;
+	}
+	var tDate = new Date();
+	
+	if(countimages == images.length)
+	{
+		countimages = 0;
+	}
+	if(tDate.getSeconds() % 1 == 0)
+	{
+		document.getElementById("img1").src = images[countimages];
+	}
+	countimages++;
+	
+	timerid = setTimeout("startTime()", 1000);
+}
+</script>
+
+<link rel="stylesheet" href="style2.css">
+
+</head>
+
+<body onload="startTime();">
+<img id="img1" src="https://yasminbascalart.files.wordpress.com/2021/11/print9.jpg" />
+</body>
+</html>
